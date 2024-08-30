@@ -2,6 +2,18 @@
 
 Welcome to the ETH-RUNE Gateway, a decentralized bridge that facilitates the transfer of ETH (Ethereum) to RUNE, the native token of the Thorchain ecosystem.
 
+## Project URL
+
+You can view and interact with the ETH-RUNE Gateway at the following URL:
+
+[ETH-RUNE Gateway](https://ethereumbridge.vercel.app/)
+
+## Contact
+
+For any inquiries or support, please reach out via email:
+
+[Contact Us](mailto:joblawal33@gmail.com)
+
 ## Overview
 
 The ETH-RUNE Gateway is designed to allow users to lock their Ethereum (ETH) on the Ethereum blockchain and mint an equivalent amount of RUNE on Thorchain. This bridge ensures that users can seamlessly transfer value between these two blockchain networks.
@@ -40,7 +52,9 @@ To use the ETH-RUNE Gateway, follow these steps:
 
 You can view and interact with the ETH-RUNE Gateway at the following URL:
 
-[ETH-RUNE Gateway](https://your-project-url.com)
+## Project Structure
+
+The project is structured as follows:
 
 ## Project Structure
 
