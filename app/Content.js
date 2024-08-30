@@ -1,12 +1,187 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 
 // Replace with your contract's ABI and address
 const CONTRACT_ABI = [
-  // ABI contents here (paste the ABI from the compiled contract)
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "oldAdmin",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newAdmin",
+        type: "address",
+      },
+    ],
+    name: "AdminTransferred",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "user",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "string",
+        name: "thorchainAddress",
+        type: "string",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tax",
+        type: "uint256",
+      },
+    ],
+    name: "LockedETHForRUNE",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "bool",
+        name: "isWhitelisted",
+        type: "bool",
+      },
+    ],
+    name: "Whitelisted",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "TAX_PERCENTAGE",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "admin",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "isWhitelisted",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "thorchainAddress",
+        type: "string",
+      },
+      {
+        internalType: "uint256",
+        name: "amountToLock",
+        type: "uint256",
+      },
+    ],
+    name: "lockETH",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+      {
+        internalType: "bool",
+        name: "_isWhitelisted",
+        type: "bool",
+      },
+    ],
+    name: "setWhitelisted",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "newAdmin",
+        type: "address",
+      },
+    ],
+    name: "transferAdmin",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "withdrawETH",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
-const CONTRACT_ADDRESS = "0xYourContractAddress"; // Replace with your contract address
+
+const CONTRACT_ADDRESS = "0x72B65e53c25E4200788F93a8b0D82dCE7184A708"; // Replace with your contract address
 
 const Content = () => {
   const [account, setAccount] = useState(null);
@@ -16,6 +191,9 @@ const Content = () => {
   const [amountToLock, setAmountToLock] = useState("");
   const [whitelistAddress, setWhitelistAddress] = useState("");
   const [newOwner, setNewOwner] = useState("");
+  const [withdrawAmount, setWithdrawAmount] = useState("");
+  const [taxPercentage, setTaxPercentage] = useState(null);
+  const [admin, setAdmin] = useState(null);
 
   const connectWallet = async () => {
     if (account) {
@@ -104,6 +282,51 @@ const Content = () => {
     }
   };
 
+  const withdrawETH = async () => {
+    if (!web3 || !account) return;
+
+    const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+    try {
+      await contract.methods
+        .withdrawETH(web3.utils.toWei(withdrawAmount, "ether"))
+        .send({ from: account });
+      console.log("Withdrawal successful");
+    } catch (error) {
+      console.error("Error withdrawing ETH:", error);
+    }
+  };
+
+  const getTaxPercentage = async () => {
+    if (!web3) return;
+
+    const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+    try {
+      const tax = await contract.methods.taxPercentage().call();
+      setTaxPercentage(web3.utils.fromWei(tax, "ether"));
+    } catch (error) {
+      console.error("Error fetching tax percentage:", error);
+    }
+  };
+
+  const getAdmin = async () => {
+    if (!web3) return;
+
+    const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+    try {
+      const adminAddress = await contract.methods.admin().call();
+      setAdmin(adminAddress);
+    } catch (error) {
+      console.error("Error fetching admin address:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (web3 && account) {
+      getTaxPercentage();
+      getAdmin();
+    }
+  }, [web3, account]);
+
   return (
     <div>
       <div>
@@ -186,6 +409,35 @@ const Content = () => {
           </button>
         </div>
       )}
+
+      {account && (
+        <div className="mt-4">
+          <h4>Withdraw ETH</h4>
+          <input
+            type="number"
+            placeholder="Amount to Withdraw (ETH)"
+            value={withdrawAmount}
+            onChange={(e) => setWithdrawAmount(e.target.value)}
+            className="p-2 border rounded"
+          />
+          <button
+            onClick={withdrawETH}
+            className="bg-primary text-white p-2 rounded-lg mt-2"
+          >
+            Withdraw ETH
+          </button>
+        </div>
+      )}
+
+      <div className="mt-4">
+        <h4>Tax Percentage</h4>
+        <p>{taxPercentage !== null ? `${taxPercentage} ETH` : "Loading..."}</p>
+      </div>
+
+      <div className="mt-4">
+        <h4>Current Admin</h4>
+        <p>{admin ? admin : "Loading..."}</p>
+      </div>
     </div>
   );
 };
