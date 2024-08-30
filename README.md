@@ -47,15 +47,3 @@ To use the ETH-RUNE Gateway, follow these steps:
 2. **Lock ETH**: Send the desired amount of ETH to the Ethereum contract using the provided UI or directly through the contract's `lockETH` function.
 3. **Receive RUNE**: The corresponding RUNE will be minted and sent to your Thorchain address.
 4. **Redeem ETH**: To redeem your ETH, burn the equivalent RUNE on Thorchain, and your ETH will be released from the Ethereum contract.
-
-## Project URL
-
-You can view and interact with the ETH-RUNE Gateway at the following URL:
-
-## Project Structure
-
-The project is structured as follows:
-
-## Project Structure
-
-The project is structured as follows:
