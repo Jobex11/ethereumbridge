@@ -421,7 +421,9 @@ const Content = () => {
       {admin !== null && (
         <div className="mt-4">
           <h4>Current Admin Address</h4>
-          <p>{admin}</p>
+          <p className="text-xs font-bold md:font-normal  md:text-base">
+            {admin}
+          </p>
         </div>
       )}
     </div>
