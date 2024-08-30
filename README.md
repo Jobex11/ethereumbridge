@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ETH-RUNE Gateway
 
-## Getting Started
+Welcome to the ETH-RUNE Gateway, a decentralized bridge that facilitates the transfer of ETH (Ethereum) to RUNE, the native token of the Thorchain ecosystem.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The ETH-RUNE Gateway is designed to allow users to lock their Ethereum (ETH) on the Ethereum blockchain and mint an equivalent amount of RUNE on Thorchain. This bridge ensures that users can seamlessly transfer value between these two blockchain networks.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How the Web3 Bridge Works
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Lock ETH on Ethereum**: Users send ETH to the smart contract on the Ethereum network. This ETH is locked in the contract, ensuring that it cannot be used elsewhere.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Mint RUNE on Thorchain**: After the ETH is successfully locked, the corresponding amount of RUNE is minted on Thorchain. This process involves an off-chain oracle or relayer that monitors the Ethereum contract and initiates the minting of RUNE on Thorchain.
 
-## Learn More
+3. **Redeem ETH by Burning RUNE**: To move back to Ethereum, users burn their RUNE on Thorchain, which triggers the release of the locked ETH on the Ethereum side. This ensures a 1:1 pegged value between the ETH locked and the RUNE minted.
 
-To learn more about Next.js, take a look at the following resources:
+### Flow Diagram
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The following image shows the flow of assets from Ethereum to Thorchain and vice versa:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![ETH to RUNE Flow](./path/to/your/image/eth_to_rune_flow.png)
 
-## Deploy on Vercel
+## Smart Contract Details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Ethereum Contract Address**: `0xYourEthereumContractAddress`
+- **Thorchain Contract Address**: `YourThorchainContractDetails`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Ethereum contract handles the locking of ETH and keeps track of the transactions. The corresponding RUNE minting occurs on Thorchain, coordinated by an off-chain mechanism.
+
+## Usage
+
+To use the ETH-RUNE Gateway, follow these steps:
+
+1. **Connect your Wallet**: Make sure your wallet (e.g., MetaMask) is connected to the Ethereum network.
+2. **Lock ETH**: Send the desired amount of ETH to the Ethereum contract using the provided UI or directly through the contract's `lockETH` function.
+3. **Receive RUNE**: The corresponding RUNE will be minted and sent to your Thorchain address.
+4. **Redeem ETH**: To redeem your ETH, burn the equivalent RUNE on Thorchain, and your ETH will be released from the Ethereum contract.
+
+## Project URL
+
+You can view and interact with the ETH-RUNE Gateway at the following URL:
+
+[ETH-RUNE Gateway](https://your-project-url.com)
+
+## Project Structure
+
+The project is structured as follows:
