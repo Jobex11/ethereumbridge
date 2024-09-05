@@ -83,7 +83,9 @@ export default function Home() {
           <div className="h-[50px] w-[50px]">
             <CryptoKingIcon />
           </div>
-          <h3 className="text-2xl">Eth-Rune GateWay</h3>
+          <h3 className="text-2xl text-main">
+            Eth-<span className="text-gray-200">Rune</span> GateWay
+          </h3>
         </div>
         {account && (
           <>
