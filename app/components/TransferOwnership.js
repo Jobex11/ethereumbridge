@@ -16,7 +16,7 @@ const TransferOwnership = ({ web3, account, contract }) => {
   };
 
   return (
-    <div>
+    <div className="space-x-4 text-center">
       <h4>Transfer Ownership</h4>
       <input
         type="text"
@@ -27,7 +27,7 @@ const TransferOwnership = ({ web3, account, contract }) => {
       />
       <button
         onClick={transferOwnership}
-        className="bg-primary text-white p-2 rounded-lg mt-2"
+        className="bg-main text-white p-2 rounded-lg mt-2"
       >
         Transfer Ownership
       </button>

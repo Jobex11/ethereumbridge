@@ -9,6 +9,8 @@ import TaxPercentage from "./components/TaxPercentage";
 import WhitelistAddress from "./components/WhitelistAddress";
 import TransferOwnership from "./components/TransferOwnership";
 import CryptoKingIcon from "./components/CryptoKingIcon";
+import WalletIcon from "@mui/icons-material/Wallet";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 export default function Home() {
   const [account, setAccount] = useState(null);
@@ -78,8 +80,8 @@ export default function Home() {
       <div>
         <Navbar connectWallet={connectWallet} account={account} />
       </div>
-      <div className="border flex flex-col items-center text-gray-300">
-        <div className="font-bold mb-4  border flex items-center justify-center">
+      <div className="flex flex-col items-center text-gray-300">
+        <div className="font-bold mb-4  flex items-center justify-center">
           <div className="h-[50px] w-[50px]">
             <CryptoKingIcon />
           </div>
@@ -89,26 +91,32 @@ export default function Home() {
         </div>
         {account && (
           <>
-            <p>Connected Wallet Address: {account}</p>
-            <p>Connected Wallet Balance: {balance} ETH</p>
+            <p>
+              {" "}
+              <WalletIcon /> Your Wallet Address: {account}
+            </p>
+            <p>
+              {" "}
+              <CurrencyExchangeIcon />
+              Test Eth Balance: {balance} ETH
+            </p>
           </>
         )}
-        {currentOwner && <p>Current Contract Owner: {currentOwner}</p>}
+
         {!isMetaMaskConnected && (
-          <p>Please connect to MetaMask to use the features below.</p>
+          <p>
+            Please connect your web3 wallet <WalletIcon /> to use the features
+            below.
+          </p>
         )}
         {isMetaMaskConnected && (
           <div>
-            <LockETH web3={web3} account={account} contract={contract} />
-            <WithdrawETH web3={web3} account={account} contract={contract} />
-            <TaxPercentage
-              web3={web3}
-              contract={contract}
-              taxPercentage={taxPercentage}
-              setTaxPercentage={setTaxPercentage}
-            />
+            <div className="p-2 m-4">
+              <LockETH web3={web3} account={account} contract={contract} />
+              <WithdrawETH web3={web3} account={account} contract={contract} />
+            </div>
             {isAdmin && (
-              <>
+              <div className="flex space-x-5">
                 <WhitelistAddress
                   web3={web3}
                   account={account}
@@ -119,9 +127,12 @@ export default function Home() {
                   account={account}
                   contract={contract}
                 />
-              </>
+              </div>
             )}
           </div>
+        )}
+        {currentOwner && (
+          <p className="p-1 text-sm">Contract Owner: {currentOwner}</p>
         )}
       </div>
     </div>

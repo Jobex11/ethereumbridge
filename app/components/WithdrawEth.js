@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 const WithdrawETH = ({ web3, account, contract }) => {
   const withdrawETH = async () => {
     if (!web3 || !account) return;
@@ -15,12 +14,14 @@ const WithdrawETH = ({ web3, account, contract }) => {
 
   return (
     <div>
-      <h4>Withdraw ETH</h4>
+      <h4 className="text-sm">
+        withdraw the rune back to as Eth to your ethereum address
+      </h4>
       <button
         onClick={withdrawETH}
-        className="bg-primary text-white p-2 rounded-lg"
+        className="bg-main text-white p-2 rounded-lg"
       >
-        Withdraw ETH
+        Widthraw
       </button>
     </div>
   );

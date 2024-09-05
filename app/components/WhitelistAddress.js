@@ -18,8 +18,8 @@ const WhitelistAddress = ({ web3, account, contract }) => {
   };
 
   return (
-    <div>
-      <h4>Add to Whitelist</h4>
+    <div className="space-x-4 text-center">
+      <h4 className="">Add to Whitelist</h4>
       <input
         type="text"
         placeholder="Address to Whitelist"
@@ -29,7 +29,7 @@ const WhitelistAddress = ({ web3, account, contract }) => {
       />
       <button
         onClick={addToWhitelist}
-        className="bg-primary text-white p-2 rounded-lg mt-2"
+        className="bg-main text-white p-2 rounded-lg mt-2"
       >
         Add to Whitelist
       </button>

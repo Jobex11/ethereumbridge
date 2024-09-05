@@ -26,27 +26,31 @@ const LockETH = ({ web3, account, contract }) => {
 
   return (
     <div>
-      <h4>Lock ETH</h4>
-      <input
-        type="text"
-        placeholder="Thorchain Address"
-        value={thorchainAddress}
-        onChange={(e) => setThorchainAddress(e.target.value)}
-        className="p-2 border rounded"
-      />
-      <input
-        type="number"
-        placeholder="Amount to Lock (ETH)"
-        value={amountToLock}
-        onChange={(e) => setAmountToLock(e.target.value)}
-        className="p-2 border rounded"
-      />
-      <button
-        onClick={lockETH}
-        className="bg-primary text-white p-2 rounded-lg mt-2"
-      >
-        Lock ETH
-      </button>
+      <h4>Change Your Eth-2-Rune</h4>
+      <div className="space-x-4">
+        <input
+          type="text"
+          placeholder="Rune Address"
+          value={thorchainAddress}
+          onChange={(e) => setThorchainAddress(e.target.value)}
+          className="p-2 border rounded w-60"
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amountToLock}
+          onChange={(e) => setAmountToLock(e.target.value)}
+          className="p-2 border rounded w-28"
+        />
+      </div>
+      <h5 className="text-sm text-red-600 py-1">
+        2.5% of Eth Sent will be deducted as charges.
+      </h5>
+      <div>
+        <button onClick={lockETH} className="bg-main text-white p-2 rounded-lg">
+          Send ETH
+        </button>
+      </div>
     </div>
   );
 };

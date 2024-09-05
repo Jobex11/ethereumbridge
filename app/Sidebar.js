@@ -5,7 +5,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import HistoryIcon from "@mui/icons-material/History";
-import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import CryptoKingIcon from "./components/CryptoKingIcon";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsPhoneIcon from "@mui/icons-material/SettingsPhone";
