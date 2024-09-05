@@ -17,7 +17,7 @@ const TransferOwnership = ({ web3, account, contract }) => {
 
   return (
     <div className="space-x-4 text-center">
-      <h4>Transfer Ownership</h4>
+      <h4 className="text-sm">Transfer Ownership (change contract owner)</h4>
       <input
         type="text"
         placeholder="New Owner Address"

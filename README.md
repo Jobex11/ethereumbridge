@@ -32,6 +32,7 @@ The following image shows the flow of assets from Ethereum to Thorchain and vice
 
 ![ETH to RUNE Flow](/assets/bridge2.png)
 ![ETH to RUNE Flow](/assets/bridge1.png)
+![ETH to RUNE Flow](/assets/bridge3.png)
 
 ## Smart Contract Details
 

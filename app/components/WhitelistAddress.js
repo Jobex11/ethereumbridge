@@ -19,7 +19,9 @@ const WhitelistAddress = ({ web3, account, contract }) => {
 
   return (
     <div className="space-x-4 text-center">
-      <h4 className="">Add to Whitelist</h4>
+      <h4 className="text-sm">
+        Add to Whitelist (address that will not pay 2.5% charges )
+      </h4>
       <input
         type="text"
         placeholder="Address to Whitelist"

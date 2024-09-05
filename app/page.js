@@ -4,13 +4,13 @@ import Web3 from "web3";
 import Navbar from "./Navbar";
 import ContractABI from "./ContractABI.json";
 import LockETH from "./components/LockETH";
-import WithdrawETH from "./components/WithdrawETH";
 import TaxPercentage from "./components/TaxPercentage";
 import WhitelistAddress from "./components/WhitelistAddress";
 import TransferOwnership from "./components/TransferOwnership";
 import CryptoKingIcon from "./components/CryptoKingIcon";
 import WalletIcon from "@mui/icons-material/Wallet";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import WithdrawETH from "./components/WithdrawEth";
 
 export default function Home() {
   const [account, setAccount] = useState(null);
