@@ -8,6 +8,7 @@ import WithdrawETH from "./components/WithdrawETH";
 import TaxPercentage from "./components/TaxPercentage";
 import WhitelistAddress from "./components/WhitelistAddress";
 import TransferOwnership from "./components/TransferOwnership";
+import CryptoKingIcon from "./components/CryptoKingIcon";
 
 export default function Home() {
   const [account, setAccount] = useState(null);
@@ -78,7 +79,12 @@ export default function Home() {
         <Navbar connectWallet={connectWallet} account={account} />
       </div>
       <div className="border flex flex-col items-center text-gray-300">
-        <h1 className="text-2xl font-bold mb-4">Eth-Rune GateWay</h1>
+        <div className="font-bold mb-4  border flex items-center justify-center">
+          <div className="h-[50px] w-[50px]">
+            <CryptoKingIcon />
+          </div>
+          <h3 className="text-2xl">Eth-Rune GateWay</h3>
+        </div>
         {account && (
           <>
             <p>Connected Wallet Address: {account}</p>
