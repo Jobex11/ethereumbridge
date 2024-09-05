@@ -1,0 +1,97 @@
+=== INSTALLATION ===
+
+forge int projectname --no-commit 
+forge test 
+forge clean 
+forge build 
+forge scrip script/EthereumToThorchainBidge.s.sol --broadcast
+
+
+======
+TO SIMULATE ON-CHAIN 
+======
+
+
+forge script script/EthereumToThorchainBridge.s.sol --broadcast --rpc-url <RPC_URL>
+Replace <RPC_URL> with the actual RPC URL of the network you're targeting. For example:
+
+For Ethereum Mainnet: https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID
+For Goerli Testnet: https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID
+For Sepolia Testnet: https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID
+For a local Ethereum node: http://127.0.0.1:8545
+
+=====
+USING ETHEREUM NODES 
+======
+
+Mak, e sure that you have an etheruem node (such as geth, hardhat or ganache)
+installed
+
+========
+USING FORGE
+=======
+
+
+
+Great to hear that your tests worked! Forge (Foundry) offers a range of functionalities beyond just running tests. Here are some additional things you can do with Forge:
+
+### 1. **Deploy Contracts**
+You can deploy your contracts to an Ethereum network using Forge. Create a deployment script and use `forge script` to deploy:
+
+```bash
+forge script script/Deploy.s.sol --broadcast
+```
+
+Make sure to create the appropriate deployment script in the `script` directory.
+
+### 2. **Verify Contracts**
+Verify your contract on Etherscan or similar services by using the `forge verify` command:
+
+```bash
+forge verify-contract <address> <contract> --network <network>
+```
+
+You'll need to provide the contract address and specify the network.
+
+### 3. **Profile Gas Usage**
+Measure the gas usage of your contract functions to optimize performance. Use the `forge test --gas-report` command to get a report of gas costs:
+
+```bash
+forge test --gas-report
+```
+
+### 4. **Interact with Contracts**
+Interact with your deployed contracts directly from the command line using `forge console`:
+
+```bash
+forge console
+```
+
+You can execute contract functions and perform transactions in this interactive environment.
+
+### 5. **Generate Code Coverage Reports**
+Get code coverage reports for your tests to ensure comprehensive testing. Use the `forge coverage` command:
+
+```bash
+forge coverage
+```
+
+### 6. **Use Script for Complex Deployments**
+Write more complex deployment and setup scripts using the `script` directory. For example, you can initialize contracts with specific parameters or deploy multiple contracts in sequence.
+
+### 7. **Mock Contracts for Testing**
+Use Foundry's mocking capabilities to test how your contract interacts with other contracts. Create mock contracts and use them in your tests to simulate different scenarios.
+
+### 8. **Integrate with CI/CD Pipelines**
+Integrate Forge tests into your continuous integration and continuous deployment (CI/CD) pipelines. Automate testing and deployment as part of your development workflow.
+
+### 9. **Explore Foundry's Libraries**
+Explore other Foundry libraries and tools, such as:
+
+- **`forge-std`**: Standard library for testing and utilities.
+- **`forge-gas-reporter`**: For detailed gas usage reports.
+
+### 10. **Audit Contract Behavior**
+Perform deeper audits of your contract's behavior and state changes. This might include creating more advanced test cases to cover edge cases or potential vulnerabilities.
+
+These features can help you build, test, and deploy smart contracts more efficiently and effectively.
