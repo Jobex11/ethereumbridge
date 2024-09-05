@@ -10,10 +10,22 @@ module.exports = {
       backgroundImage: {
         primary: "#0C4E86", // Example primary color
         secondary: "#F59E0B",
+        "light-primary": "",
+        "light-secondary": "",
+        "light-tertiary": "",
+        "dark-primary": "",
+        "dark-secondary": "",
+        "dark-tertiary": "",
       },
       colors: {
         primary: "#0C4E86", // Example primary color
         secondary: "#F59E0B", // Example secondary color
+        "light-primary": "",
+        "light-secondary": "",
+        "light-tertiary": "",
+        "dark-primary": "",
+        "dark-secondary": "",
+        "dark-tertiary": "",
       },
     },
   },
