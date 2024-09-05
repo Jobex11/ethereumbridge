@@ -30,7 +30,7 @@ The ETH-RUNE Gateway is designed to allow users to lock their Ethereum (ETH) on 
 
 The following image shows the flow of assets from Ethereum to Thorchain and vice versa:
 
-![ETH to RUNE Flow](./path/to/your/image/eth_to_rune_flow.png)
+![ETH to RUNE Flow](/assets/bridge2.png)
 
 ## Smart Contract Details
 
