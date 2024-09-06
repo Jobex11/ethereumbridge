@@ -1,6 +1,6 @@
 import React from "react";
 
-const WithdrawETH = ({ web3, account, contract, onActionClick }) => {
+const Withdraw = ({ web3, account, contract, onActionClick }) => {
   const withdrawETH = async () => {
     if (!web3 || !account) {
       onActionClick(); // Show the modal if the wallet is not connected
@@ -28,7 +28,7 @@ const WithdrawETH = ({ web3, account, contract, onActionClick }) => {
   );
 };
 
-export default WithdrawETH;
+export default Withdraw;
 
 /*
 "use client";

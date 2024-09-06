@@ -2,7 +2,9 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ConnectWallet from "./components/ConnectWallet";
+import CryptoKingIcon from "./components/CryptoKingIcon";
 
+import WalletIcon from "@mui/icons-material/Wallet";
 const Navbar = ({ connectWallet, account }) => {
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
@@ -21,6 +23,23 @@ const Navbar = ({ connectWallet, account }) => {
       </div>
       <div className="p-3 bg-[#35af74] text-white text-base rounded-xl shadow-md hover:bg-[#278256] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition ease-in-out duration-300 cursor-pointer">
         <ConnectWallet account={account} connectWallet={connectWallet} />
+      </div>
+      {!account && (
+        <div className="md:hidden text-center mb-0 md:mb-4 text-gray-300">
+          <p>
+            Welcome to Eth-Rune Gateway, kindly connect your Web3 <WalletIcon />
+            wallet.
+          </p>
+          <p>we ease the exchange of your Ethers to Rune</p>
+        </div>
+      )}
+      <div className="md:hidden font-bold mb-4 flex items-center justify-center p-2 rounded-xl bg-[#1c1c24]">
+        <div className="h-[50px] w-[50px]">
+          <CryptoKingIcon />
+        </div>
+        <h3 className="text-2xl text-main">
+          Eth-<span className="text-gray-200">Rune</span> Gateway
+        </h3>
       </div>
     </div>
   );

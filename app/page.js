@@ -10,7 +10,7 @@ import TransferOwnership from "./components/TransferOwnership";
 import CryptoKingIcon from "./components/CryptoKingIcon";
 import WalletIcon from "@mui/icons-material/Wallet";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
-import WithdrawETH from "./components/WithdrawETH";
+import Withdraw from "./components/Withdraw";
 import WalletConnectModal from "./components/WalletConnectModal"; // Import modal
 
 export default function Home() {
@@ -88,7 +88,7 @@ export default function Home() {
       <Navbar connectWallet={connectWallet} account={account} />
 
       <div className="flex flex-col items-center text-gray-300">
-        <div className="font-bold mb-4 flex items-center justify-center p-2 rounded-xl bg-[#1c1c24]">
+        <div className="hidden md:flex font-bold mb-4 items-center justify-center p-2 rounded-xl bg-[#1c1c24]">
           <div className="h-[50px] w-[50px]">
             <CryptoKingIcon />
           </div>
@@ -98,14 +98,18 @@ export default function Home() {
         </div>
 
         {!account && (
-          <p className="text-center mb-4">
-            Welcome to Eth-Rune Gateway, kindly connect your Web3 <WalletIcon />
-            wallet.
-          </p>
+          <div className="hidden md:block text-center mb-4">
+            <p>
+              Welcome to Eth-Rune Gateway, kindly connect your Web3{" "}
+              <WalletIcon />
+              wallet.
+            </p>
+            <p>we ease the exchange of your Ethers to Rune</p>
+          </div>
         )}
 
         {account && (
-          <>
+          <div>
             <p>
               <WalletIcon /> Your Wallet Address: {account}
             </p>
@@ -113,11 +117,11 @@ export default function Home() {
               <CurrencyExchangeIcon />
               Test Eth Balance: {balance} ETH
             </p>
-          </>
+          </div>
         )}
 
-        <div className="mt-5">
-          <div className="p-4 rounded-lg shadow-lg bg-[#1c1c24]">
+        <div className="mt-2 md:mt-5">
+          <div className="mx-0 md:mx-0 p-4 rounded-lg shadow-lg bg-[#1c1c24]">
             <h3 className="text-xl mb-4">ETH Management</h3>
             <div className="flex flex-col justify-start items-start space-y-4">
               <LockETH
@@ -126,7 +130,7 @@ export default function Home() {
                 contract={contract}
                 onActionClick={handleActionClick}
               />
-              <WithdrawETH
+              <Withdraw
                 web3={web3}
                 account={account}
                 contract={contract}
@@ -135,9 +139,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-6 p-4  rounded-lg shadow-lg bg-[#1c1c24]">
+          <div className="mt-4 md:mt-6 p-4  rounded-lg shadow-lg bg-[#1c1c24]">
             <h3 className="text-xl mb-4">Admin Functions</h3>
-            <div className="flex space-x-4">
+            <div className="flex flex-col md:flex-row space-x-4">
               <WhitelistAddress
                 web3={web3}
                 account={account}
