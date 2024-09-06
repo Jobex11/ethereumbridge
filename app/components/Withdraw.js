@@ -1,4 +1,5 @@
 import React from "react";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 const Withdraw = ({ web3, account, contract, onActionClick }) => {
   const withdrawETH = async () => {
@@ -22,7 +23,7 @@ const Withdraw = ({ web3, account, contract, onActionClick }) => {
         onClick={withdrawETH}
         className="bg-main hover:bg-[#278256] text-white p-2 rounded-lg"
       >
-        Withdraw
+        <ArrowDownwardIcon /> Withdraw
       </button>
     </div>
   );

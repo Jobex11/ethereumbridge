@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from "react";
-
+import SendIcon from "@mui/icons-material/Send";
 const LockETH = ({ web3, account, contract, onActionClick }) => {
   const [thorchainAddress, setThorchainAddress] = useState("");
   const [amountToLock, setAmountToLock] = useState("");
@@ -50,7 +51,7 @@ const LockETH = ({ web3, account, contract, onActionClick }) => {
           onClick={lockETH}
           className="bg-main hover:bg-[#278256] text-white p-2 rounded-lg"
         >
-          Send ETH
+          <SendIcon /> Send ETH
         </button>
       </div>
     </div>

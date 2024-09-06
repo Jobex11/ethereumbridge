@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 const TransferOwnership = ({ web3, account, contract, onActionClick }) => {
   const [newOwner, setNewOwner] = useState("");
@@ -36,7 +37,7 @@ const TransferOwnership = ({ web3, account, contract, onActionClick }) => {
         onClick={transferOwnership}
         className="bg-main hover:bg-[#278256] text-white p-2 rounded-lg mt-2"
       >
-        Transfer Ownership
+        <SwapHorizIcon /> Transfer Ownership
       </button>
     </div>
   );

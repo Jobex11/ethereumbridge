@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 const WhitelistAddress = ({ web3, account, contract, onActionClick }) => {
   const [whitelistAddress, setWhitelistAddress] = useState("");
@@ -40,7 +41,7 @@ const WhitelistAddress = ({ web3, account, contract, onActionClick }) => {
         onClick={addToWhitelist}
         className="bg-main hover:bg-[#278256] text-white p-2 rounded-lg mt-2"
       >
-        Add to Whitelist
+        <VerifiedIcon /> Add to Whitelist
       </button>
     </div>
   );
