@@ -31,7 +31,7 @@ const TransferOwnership = ({ web3, account, contract, onActionClick }) => {
         placeholder="New Owner Address"
         value={newOwner}
         onChange={(e) => setNewOwner(e.target.value)}
-        className="p-2 border rounded"
+        className="p-2 border rounded text-gray-800 text-base"
       />
       <button
         onClick={transferOwnership}

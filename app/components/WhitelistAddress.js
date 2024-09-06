@@ -35,7 +35,7 @@ const WhitelistAddress = ({ web3, account, contract, onActionClick }) => {
         placeholder="Address to Whitelist"
         value={whitelistAddress}
         onChange={(e) => setWhitelistAddress(e.target.value)}
-        className="p-2 border rounded"
+        className="p-2 border rounded text-gray-800 text-base"
       />
       <button
         onClick={addToWhitelist}

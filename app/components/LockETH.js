@@ -33,14 +33,14 @@ const LockETH = ({ web3, account, contract, onActionClick }) => {
           placeholder="Rune Address"
           value={thorchainAddress}
           onChange={(e) => setThorchainAddress(e.target.value)}
-          className="p-2 border rounded w-full md:w-60"
+          className="p-2 border rounded w-full md:w-60 text-gray-800 text-base"
         />
         <input
           type="number"
           placeholder="Amount"
           value={amountToLock}
           onChange={(e) => setAmountToLock(e.target.value)}
-          className="p-2 border rounded w-full md:w-28"
+          className="p-2 border rounded w-full md:w-28 text-gray-800 font-bold"
         />
       </div>
       <h5 className="text-sm text-red-600 py-1">
