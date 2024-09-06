@@ -52,7 +52,7 @@ const Navbar = ({ connectWallet, account }) => {
         </h3>
       </div>
       {/* nav bar */}
-      <div className="md:hidden">
+      <div className="hidden">
         {/* Menu Icon to open the full-screen navigation */}
         <IconButton onClick={toggleNav}>
           <MenuIcon fontSize="large" className="text-main" /> {/* Menu Icon */}
@@ -60,7 +60,7 @@ const Navbar = ({ connectWallet, account }) => {
 
         {/* Full-Screen Navigation */}
         {open && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center w-screen h-screen">
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center">
             {/* Close Icon */}
             <IconButton
               className="absolute top-4 right-4 text-main"
