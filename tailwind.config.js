@@ -11,6 +11,7 @@ module.exports = {
         primary: "#0C4E86", // Example primary color
         secondary: "#F59E0B",
         main: "#35af74",
+        "main-dark": "bg-[#1c1c24]",
         "light-primary": "",
         "light-secondary": "",
         "light-tertiary": "",
@@ -22,6 +23,7 @@ module.exports = {
         primary: "#0C4E86", // Example primary color
         secondary: "#F59E0B", // Example secondary color
         main: "#35af74",
+        "main-dark": "bg-[#1c1c24]",
         "light-primary": "",
         "light-secondary": "",
         "light-tertiary": "",

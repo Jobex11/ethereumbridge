@@ -7,6 +7,7 @@ import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu"; // Menu Icon for opening the nav bar
 import CloseIcon from "@mui/icons-material/Close"; // Optional: Close icon to close the nav bar
 import Link from "next/link";
+import HistoryIcon from "@mui/icons-material/History";
 
 import WalletIcon from "@mui/icons-material/Wallet";
 const Navbar = ({ connectWallet, account }) => {
@@ -29,7 +30,7 @@ const Navbar = ({ connectWallet, account }) => {
         </div>
       </div>
       <div className="p-3 bg-[#35af74] text-white text-base rounded-xl shadow-md hover:bg-[#278256] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition ease-in-out duration-300 cursor-pointer">
-        view transactions
+        <HistoryIcon /> view transactions
       </div>
       <div className="p-3 bg-[#35af74] text-white text-base rounded-xl shadow-md hover:bg-[#278256] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition ease-in-out duration-300 cursor-pointer">
         <ConnectWallet account={account} connectWallet={connectWallet} />

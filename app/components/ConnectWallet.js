@@ -1,12 +1,16 @@
 "use client";
 import React from "react";
-
+import WalletIcon from "@mui/icons-material/Wallet";
 const ConnectWallet = ({ account, connectWallet }) => {
   return (
     <button onClick={connectWallet}>
-      {account
-        ? `${account.slice(0, 6)}...${account.slice(-5)}`
-        : "Connect Wallet"}
+      {account ? (
+        `${account.slice(0, 6)}...${account.slice(-5)}`
+      ) : (
+        <div>
+          <WalletIcon /> Connect Wallet
+        </div>
+      )}
     </button>
   );
 };
