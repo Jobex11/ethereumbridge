@@ -6,6 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
 import Slide from "@mui/material/Slide";
 import WalletIcon from "@mui/icons-material/Wallet";
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -23,7 +24,11 @@ export default function WalletConnectModal({
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
       PaperProps={{
-        className: "bg-[#1c1c24] rounded-lg border border-[#35af74]",
+        sx: {
+          backgroundColor: "#1c1c24",
+          borderRadius: "0.5rem", // Tailwind rounded-lg
+          border: "1px solid #35af74",
+        },
       }}
     >
       <DialogTitle
@@ -32,7 +37,7 @@ export default function WalletConnectModal({
         {"Connect Your Wallet"}
       </DialogTitle>
       <DialogContent>
-        <p className="text-white">
+        <p className="text-white  items-center space-x-2">
           Please connect your Web3 <WalletIcon /> wallet to proceed with this
           action (e.g., Send ETH, Withdraw, Whitelist, Transfer Ownership).
         </p>
@@ -41,7 +46,7 @@ export default function WalletConnectModal({
         <Button
           onClick={handleClose}
           variant="outlined"
-          sx={{ borderColor: "#35af74", color: "#35af74" }} // Custom MUI styling
+          sx={{ borderColor: "#35af74", color: "#35af74" }} // MUI sx for border color
           className="text-white"
         >
           Cancel
@@ -49,7 +54,7 @@ export default function WalletConnectModal({
         <Button
           onClick={connectWallet}
           variant="outlined"
-          sx={{ borderColor: "#35af74", color: "#35af74" }} // Custom MUI styling
+          sx={{ borderColor: "#35af74", color: "#35af74" }} // MUI sx for border color
           className="text-white"
         >
           Connect Wallet
