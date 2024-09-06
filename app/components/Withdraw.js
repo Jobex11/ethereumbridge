@@ -18,7 +18,9 @@ const Withdraw = ({ web3, account, contract, onActionClick }) => {
 
   return (
     <div>
-      <h4 className="text-sm">Withdraw ETH to your Ethereum address</h4>
+      <h4 className="text-sm">
+        Withdraw Eth to your connected wallet by burning Rune
+      </h4>
       <button
         onClick={withdrawETH}
         className="bg-main hover:bg-[#278256] text-white p-2 rounded-lg"
