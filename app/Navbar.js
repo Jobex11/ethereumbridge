@@ -12,7 +12,7 @@ const Navbar = ({ connectWallet, account }) => {
           placeholder="Search for transaction hash/amount/address"
           className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none"
         />
-        <div className="w-[72px] h-full rounded-[20px] bg-[#35af74] flex justify-center items-center cursor-pointer">
+        <div className="w-[72px] h-full rounded-[20px] bg-[#35af74] hover:bg-[#278256] flex justify-center items-center cursor-pointer">
           <SearchIcon style={{ color: "white", fontSize: "25px" }} />
         </div>
       </div>
