@@ -141,7 +141,7 @@ export default function Home() {
 
           <div className="mt-4 md:mt-6 p-4  rounded-lg shadow-lg bg-[#1c1c24]">
             <h3 className="text-xl mb-4">Admin Functions</h3>
-            <div className="flex flex-col md:flex-row space-x-4">
+            <div className="flex flex-col md:flex-row space-x-0 md:space-x-4">
               <WhitelistAddress
                 web3={web3}
                 account={account}

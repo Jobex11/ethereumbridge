@@ -26,20 +26,20 @@ const LockETH = ({ web3, account, contract, onActionClick }) => {
   return (
     <div>
       <h4>Change Your Eth-2-Rune</h4>
-      <div className="space-x-4">
+      <div className=" space-y-2 md:space-y-0 md:space-x-4">
         <input
           type="text"
           placeholder="Rune Address"
           value={thorchainAddress}
           onChange={(e) => setThorchainAddress(e.target.value)}
-          className="p-2 border rounded w-60"
+          className="p-2 border rounded w-full md:w-60"
         />
         <input
           type="number"
           placeholder="Amount"
           value={amountToLock}
           onChange={(e) => setAmountToLock(e.target.value)}
-          className="p-2 border rounded w-28"
+          className="p-2 border rounded w-full md:w-28"
         />
       </div>
       <h5 className="text-sm text-red-600 py-1">
